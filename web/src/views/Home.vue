@@ -54,7 +54,7 @@ const birthData = ref<BirthData>({
 });
 
 const loading = ref(false);
-const analysisResult = ref<BaziAnalysisResult | null>(null);
+const analysisResult = ref<BaziAnalysisResult | undefined>();
 
 const analyze = async () => {
   loading.value = true;
@@ -64,6 +64,7 @@ const analyze = async () => {
   } catch (error) {
     console.error('Analysis error:', error);
     alert('分析失败，请检查输入信息');
+    analysisResult.value = undefined;
   } finally {
     loading.value = false;
   }

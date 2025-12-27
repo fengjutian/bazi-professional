@@ -23,10 +23,10 @@ router.post('/analyze', (req, res) => {
     const timeGanZhi = getTimeGanZhi(dayGan, hour);
     
     const bazi = {
-      year: { gan: yearGanZhi.charAt(0), zhi: yearGanZhi.charAt(1) },
-      month: { gan: monthGanZhi.charAt(0), zhi: monthGanZhi.charAt(1) },
-      day: { gan: dayGanZhi.charAt(0), zhi: dayGanZhi.charAt(1) },
-      time: { gan: timeGanZhi.charAt(0), zhi: timeGanZhi.charAt(1) }
+      year: { gan: yearGanZhi.charAt(0) as any, zhi: yearGanZhi.charAt(1) as any },
+      month: { gan: monthGanZhi.charAt(0) as any, zhi: monthGanZhi.charAt(1) as any },
+      day: { gan: dayGanZhi.charAt(0) as any, zhi: dayGanZhi.charAt(1) as any },
+      time: { gan: timeGanZhi.charAt(0) as any, zhi: timeGanZhi.charAt(1) as any }
     };
     
     // 分析八字
